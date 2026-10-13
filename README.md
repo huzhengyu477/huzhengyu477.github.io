@@ -33,12 +33,19 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 ---
 
-## 📝 Selected Publications {#publications}
-<p class="pub-hint">(* denotes equal contribution; = denotes students mentored by me.)</p>
-
-<div class="publication-filter-actions">
-  <button type="button" class="research-category publication-filter" data-filter="all" aria-controls="paper-list" aria-pressed="false">All Papers</button>
+<div class="publications-header">
+  <h2 id="publications">📝 Selected Publications</h2>
+  <div class="publication-filter-actions">
+    <button type="button" class="research-category publication-filter" data-filter="all" aria-controls="paper-list" aria-pressed="false">All Papers</button>
+    {% if site.scholar_url %}
+      <a class="publication-scholar-link" href="{{ site.scholar_url }}" aria-label="Google Scholar profile">
+        <img src="{{ "/img/google-scholar.svg" | relative_url }}" alt="" aria-hidden="true" />
+        <span>Google Scholar</span>
+      </a>
+    {% endif %}
+  </div>
 </div>
+<p class="pub-hint">(* denotes equal contribution; = denotes students mentored by me.)</p>
 
 <div class="research-umbrella">
   <div class="research-umbrella-label">🌐 Data-Centric AI</div>

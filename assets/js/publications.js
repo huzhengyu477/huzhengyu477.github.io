@@ -19,5 +19,5 @@
     button.addEventListener('click', () => showCategory(button.dataset.filter));
   });
 
-  showCategory('all');
+  showCategory('preference-data');
 })();

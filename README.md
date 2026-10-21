@@ -4,30 +4,6 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 
 
-### 📢 News {#news}
-<div class="news-scroll" markdown="1">
-
-- **2026.09** 🎉 Our paper [Population-Aligned Persona Generation for LLM-based Social Simulation](https://arxiv.org/pdf/2509.10127) is accepted to **Neurips 2026**. See you in Sydney (Dec 6 - 12)!
-- **2026.08** 🎉 Our paper [When the Strongest Teacher Is Not the Best Teacher: Student-Centric Answer Selection](https://arxiv.org/abs/2605.26872) is accepted to **EMNLP 2026**. See you in Budapest (Oct 24–29)!
-- **2026.03** 🎓 I will join **the University of Washington, Seattle** as a Ph.D. student.
-- **2025.12** 🧑‍💻 I joined <img class="brand-logo" src="/assets/img/logos/qwen.png" alt="Qwen"> **[Qwen Team](https://github.com/QwenLM) (Foundation Model Group)** at Alibaba as a research intern. <span class="badge badge-accent">Contributing to the Qwen3.5 / 3.6 / 3.7 / 3.8 / 4.0 ... model family</span>
-- **2025.11** 🎉 Our paper [Towards Acyclic Preference Evaluation of Language Models via Multiple Evaluators](https://arxiv.org/pdf/2410.12869) is accepted to **AAAI 2026**. See you in Singapore (Jan 20–27)!
-- **2025.09** 🎉 Our paper [Unveiling the Learning Mind of Language Models](https://arxiv.org/pdf/2506.13464) is accepted to **NeurIPS 2025**. See you in San Diego (Dec 2–7)!
-- **2025.08** 🎉 Our paper [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/pdf/2407.01085) is accepted to **EMNLP 2025**. See you in Suzhou (Nov 4–9)!
-- **2025.05** 🎉 Our paper [Editable Concept Bottleneck Models](https://arxiv.org/pdf/2405.15476) is accepted to **ICML 2025**.
-- **2024.11** 🧑‍💻 I joined <img class="brand-logo" src="/assets/img/logos/microsoft.svg" alt="Microsoft"> **Microsoft Research Asia** as a research intern.
-- **2024.09** 🎉 Our paper [Let's Ask GNN: Empowering Large Language Model for Graph In-Context Learning](https://arxiv.org/pdf/2410.07074) is accepted to **EMNLP 2024**.
-- **2024.06** 🤝 I started a research internship at **University of Washington, Seattle** with Prof. Ranjay Krishna and Jieyu Zhang.
-- **2024.02 – 2024.11** 🧑‍💻 I interned at <img class="brand-logo" src="/assets/img/logos/meituan.svg" alt="Meituan"> **Meituan (Foundation Model Group)** as a research intern, supervised by Dr. Zhengyu Chen.
-- **2024.01** 🤝 I started a research internship at **Northwestern University** with Prof. Kaize Ding.
-- **2023.09** 🎉 Our paper [On the Trade-off of Intra-/Inter-class Diversity for Supervised Pre-training](https://arxiv.org/abs/2305.12224) is accepted to **NeurIPS 2023**.
-
-
-
-
-</div>
-
-
 
 
 

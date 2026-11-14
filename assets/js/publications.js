@@ -7,7 +7,7 @@
 
   function showCategory(category) {
     papers.forEach((paper) => {
-      paper.hidden = category !== 'all' && paper.dataset.category !== category;
+      paper.hidden = paper.dataset.category !== category;
     });
 
     buttons.forEach((button) => {

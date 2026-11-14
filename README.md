@@ -12,7 +12,6 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 <div class="publications-header">
   <h2 id="publications">📝 Selected Publications</h2>
   <div class="publication-filter-actions">
-    <button type="button" class="research-category publication-filter" data-filter="all" aria-controls="paper-list" aria-pressed="false">All Papers</button>
     {% if site.scholar_url %}
       <a class="publication-scholar-link" href="{{ site.scholar_url }}" aria-label="Google Scholar profile">
         <img src="{{ "/img/google-scholar.svg" | relative_url }}" alt="" aria-hidden="true" />

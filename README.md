@@ -40,6 +40,11 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 <ul class="paper-list" id="paper-list">
   <li data-category="long-horizon-agents" hidden>
+    <a class="paper-title" href="https://arxiv.org/pdf/2611.11995">Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization</a>
+    <div class="paper-authors"><strong><u>Zhengyu Hu</u></strong>, Zheyuan Xiao, Yike Wang, Hamish Ivison, Haoyu Wang, Yige Yuan, Rulin Shao, Yuetai Li, Niqi Lyu, Kevin Ding, Shu Yang, Zhichen Zeng, Banghua Zhu, Jiaxin Pei, Kaize Ding, Pradeep Dasigi, Dan Roth, Hannaneh Hajishirzi, Noah A. Smith, Teng Xiao, Radha Poovendran.</div>
+    <div class="paper-tags"><span class="venue venue-submitted">arXiv</span><span class="paper-category">🧭 Long-Horizon Agents</span></div>
+  </li>
+  <li data-category="long-horizon-agents" hidden>
     <a class="paper-title" href="https://rsi-first-exam.rsi-anything.workers.dev/">OpenRSI-Index</a>
     <div class="paper-authors"><strong><u>Zhengyu Hu</u></strong> · Core Contributor</div>
     <div class="paper-tags"><span class="venue venue-workshop">Open Source Project</span><span class="paper-category">🧭 Long-Horizon Agents</span></div>

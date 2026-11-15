@@ -530,7 +530,13 @@ img.brand-logo[src*="ai2"] { height: 0.82em; max-width: 3.6em; vertical-align: -
 /* Publication tags */
 .paper-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-.paper-tags > span { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.85em; font-weight: 600; }
+.paper-tags > span, .paper-tags > a { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.85em; font-weight: 600; }
+
+.paper-tags > a { background: #dbeafe; color: #1e40af; }
+
+.paper-tags > a:hover { text-decoration: underline; }
+
+.paper-tags > a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .venue-main { background: #e8f5e9; color: #1b5e20; }
 

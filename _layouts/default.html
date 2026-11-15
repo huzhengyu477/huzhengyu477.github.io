@@ -21,35 +21,37 @@
 
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
-        <nav class="site-toc" aria-label="Table of contents">
-          <div class="site-toc-title">📑 Contents</div>
-          <ul>
-            <li><a href="#news">📢 News</a></li>
-            <li><a href="#publications">📝 Selected Publications</a></li>
-            <li><a href="#service">🏅 Professional Service</a></li>
-          </ul>
-          <div class="profile-social" aria-label="Contact and social links">
-            {% if site.email %}
-              <a href="mailto:{{ site.email }}" aria-label="Email">
-                <img src="{{ "/img/mail.svg" | relative_url }}" alt="Email" />
-              </a>
-            {% endif %}
-            {% if site.scholar_url %}
-              <a href="{{ site.scholar_url }}" aria-label="Google Scholar">
-                <img src="{{ "/img/google-scholar.svg" | relative_url }}" alt="Google Scholar" />
-              </a>
-            {% endif %}
-            {% if site.twitter_url %}
-              <a href="{{ site.twitter_url }}" aria-label="Twitter/X">
-                <img src="{{ "/img/twitter.svg" | relative_url }}" alt="Twitter/X" />
-              </a>
-            {% endif %}
-            {% if site.github_url %}
-              <a href="{{ site.github_url }}" aria-label="GitHub">
-                <img src="{{ "/img/github-alt.svg" | relative_url }}" alt="GitHub" />
-              </a>
-            {% endif %}
-          </div>
+        <nav class="profile-links" aria-label="Contact and social links">
+          {% if site.github_url %}
+            <a href="{{ site.github_url }}">
+              <img src="{{ "/img/github-alt.svg" | relative_url }}" alt="" aria-hidden="true" />
+              <span>GitHub</span>
+            </a>
+          {% endif %}
+          {% if site.linkedin_url %}
+            <a href="{{ site.linkedin_url }}">
+              <img src="{{ "/img/linkedin.svg" | relative_url }}" alt="" aria-hidden="true" />
+              <span>LinkedIn</span>
+            </a>
+          {% endif %}
+          {% if site.twitter_url %}
+            <a href="{{ site.twitter_url }}">
+              <img src="{{ "/img/twitter.svg" | relative_url }}" alt="" aria-hidden="true" />
+              <span>Twitter</span>
+            </a>
+          {% endif %}
+          {% if site.scholar_url %}
+            <a href="{{ site.scholar_url }}">
+              <img src="{{ "/img/google-scholar.svg" | relative_url }}" alt="" aria-hidden="true" />
+              <span>Google Scholar</span>
+            </a>
+          {% endif %}
+          {% if site.email %}
+            <a href="mailto:{{ site.email }}" title="{{ site.email }}">
+              <img src="{{ "/img/mail.svg" | relative_url }}" alt="" aria-hidden="true" />
+              <span>Email</span>
+            </a>
+          {% endif %}
         </nav>
       </header>
 

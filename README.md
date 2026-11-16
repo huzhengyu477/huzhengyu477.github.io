@@ -41,7 +41,7 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 <div class="publication-years" id="paper-list">
   <div class="paper-year-group" data-year="2026">
-    <h3 class="paper-year-heading">2026</h3>
+    <h3 class="paper-year-heading">Preprint 2026</h3>
     <ul class="paper-list">
       <li data-category="long-horizon-agents">
         <a class="paper-title" href="https://arxiv.org/pdf/2611.11995">Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization</a>
@@ -58,6 +58,11 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
         <div class="paper-authors">Yike Wang*, Huaisheng Zhu*, <strong><u>Zhengyu Hu</u></strong>, Yige Yuan, Zhengyu Chen, Shakti Senthil, Hannaneh Hajishirzi, Yulia Tsvetkov, Noah A. Smith, Pradeep Dasigi, Teng Xiao.</div>
         <div class="paper-tags"><span class="venue venue-submitted">Submitted to ICLR 2027</span><span class="venue venue-workshop">Accepted at LLA@COLM 2026</span><span class="paper-category">🧭 Long-Horizon Agents</span></div>
       </li>
+    </ul>
+  </div>
+  <div class="paper-year-group" data-year="2026">
+    <h3 class="paper-year-heading">2026</h3>
+    <ul class="paper-list">
       <li data-category="dataset-construction">
         <a class="paper-title" href="https://arxiv.org/pdf/2509.10127">Population-Aligned Persona Generation for LLM-based Social Simulation</a>
         <div class="paper-authors"><strong><u>Zhengyu Hu</u></strong>, Jianxun Lian, Zheyuan Xiao, Tianfu Wang, Xiao Teng, Fengqing Jiang, Max Xiong, Yuxuan Lei, Kaize Ding, Ziang Xiao, Nicholas Jing Yuan, Xing Xie, Radha Poovendran.</div>

@@ -41,7 +41,7 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 <div class="publication-years" id="paper-list">
   <div class="paper-year-group" data-year="2026">
-    <h3 class="paper-year-heading">Preprint 2026</h3>
+    <h3 class="paper-year-heading">Preprint</h3>
     <ul class="paper-list">
       <li data-category="long-horizon-agents">
         <a class="paper-title" href="https://arxiv.org/pdf/2611.11995">Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization</a>

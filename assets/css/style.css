@@ -610,3 +610,99 @@ html[data-theme="fresh"] details { border-color: rgba(var(--accent-rgb), 0.2); }
 
 /* .badge-accent intentionally NOT overridden — keep the punchy UW red across all themes. */
 html[data-theme="fresh"] .venue-main { background: #ecfdf5; color: #065f46; }
+
+.music-corner {
+  --music-ink: #263c35;
+  --music-jade: #31574b;
+  border: 1px solid #d6ddd0;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #f1f3eb, #fbf9f1 65%);
+}
+
+.music-bar {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 22px);
+  padding: clamp(14px, 3vw, 24px);
+}
+
+.music-disc {
+  flex: none;
+  width: clamp(46px, 10vw, 72px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #934d41 0 7%, #e2d8ba 8% 24%, transparent 25%),
+    repeating-radial-gradient(circle, #2e4b41 0 3px, #446155 4px, #2e4b41 5px);
+  box-shadow: 0 2px 5px #263c3533;
+}
+
+.music-copy { flex: 1; min-width: 0; }
+
+.music-corner .music-copy h3 {
+  margin: 0 0 2px;
+  font: 600 1.35rem/1.4 "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  color: var(--music-ink);
+}
+
+.music-corner .music-copy p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5d54;
+}
+
+.music-corner .music-source {
+  display: inline-block;
+  color: var(--music-jade);
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.music-toggle {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--music-jade);
+  color: #fff;
+  cursor: pointer;
+}
+
+.music-toggle[hidden] { display: none; }
+.music-toggle:hover { background: #244338; }
+.music-toggle:focus-visible, .music-source:focus-visible { outline: 2px solid var(--music-jade); outline-offset: 3px; }
+
+.music-toggle-icon {
+  border-block: 6px solid transparent;
+  border-left: 10px solid currentColor;
+  margin-left: 2px;
+}
+
+.music-toggle[aria-expanded="true"] .music-toggle-icon {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  border: 0;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.music-player {
+  margin: 0 clamp(14px, 3vw, 24px) clamp(14px, 3vw, 24px);
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--music-ink);
+}
+
+.music-player iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}

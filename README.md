@@ -140,3 +140,25 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 **Journal Reviewer**
 + DMLR, TNNLS, TPAMI, ACM TSC
+
+---
+
+## Music Corner {#music-corner}
+
+<div class="music-corner" lang="zh-CN">
+  <div class="music-bar">
+    <span class="music-disc" aria-hidden="true"></span>
+    <div class="music-copy">
+      <h3>古风与戏曲</h3>
+      <p>半壶纱 · 刘珂矣</p>
+      <a class="music-source" href="https://www.bilibili.com/video/BV1wWJa61EYv/?p=2" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
+    </div>
+    <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player" aria-expanded="false" hidden>
+      <span class="music-toggle-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="music-player" id="music-player" hidden></div>
+  <template id="music-player-template">
+    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid=BV1wWJa61EYv&amp;cid=42809491662&amp;p=2&amp;autoplay=0&amp;danmaku=0" allowfullscreen></iframe>
+  </template>
+</div>

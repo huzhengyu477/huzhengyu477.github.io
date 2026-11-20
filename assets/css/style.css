@@ -633,6 +633,8 @@ html[data-theme="fresh"] .venue-main { background: #ecfdf5; color: #065f46; }
 .music-corner {
   --music-ink: #263c35;
   --music-jade: #31574b;
+  box-sizing: border-box;
+  max-width: 620px;
   border: 1px solid #d6ddd0;
   border-radius: 14px;
   background: linear-gradient(110deg, #f1f3eb, #fbf9f1 65%);
@@ -648,11 +650,11 @@ html[data-theme="fresh"] .venue-main { background: #ecfdf5; color: #065f46; }
 
 .music-bar {
   display: flex;
-  flex: 1 1 265px;
+  flex: 1 1 290px;
   min-width: 0;
   align-items: center;
-  gap: clamp(12px, 3vw, 22px);
-  padding: clamp(14px, 3vw, 24px);
+  gap: clamp(12px, 2vw, 16px);
+  padding: clamp(14px, 2vw, 18px);
 }
 
 .music-disc {

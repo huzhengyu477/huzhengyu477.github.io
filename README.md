@@ -146,19 +146,34 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 ## Music Corner {#music-corner}
 
 <div class="music-corner" lang="zh-CN">
-  <div class="music-bar">
-    <span class="music-disc" aria-hidden="true"></span>
-    <div class="music-copy">
-      <h3>古风与戏曲</h3>
-      <p>半壶纱 · 刘珂矣</p>
-      <a class="music-source" href="https://www.bilibili.com/video/BV1wWJa61EYv/?p=2" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
+  <div class="music-main">
+    <div class="music-bar">
+      <span class="music-disc" aria-hidden="true"></span>
+      <div class="music-copy">
+        <h3>古风与戏曲</h3>
+        <p class="music-current" aria-live="polite">半壶纱 · 刘珂矣</p>
+        <a class="music-source" href="https://www.bilibili.com/video/BV1wWJa61EYv/?p=2" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
+      </div>
+      <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player" aria-expanded="false" hidden>
+        <span class="music-toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
-    <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player" aria-expanded="false" hidden>
-      <span class="music-toggle-icon" aria-hidden="true"></span>
-    </button>
+    <div class="music-player" id="music-player" hidden></div>
   </div>
-  <div class="music-player" id="music-player" hidden></div>
   <template id="music-player-template">
-    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid=BV1wWJa61EYv&amp;cid=42809491662&amp;p=2&amp;autoplay=0&amp;danmaku=0" allowfullscreen></iframe>
+    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid=BV1wWJa61EYv&amp;autoplay=1&amp;danmaku=0" allow="autoplay" allowfullscreen></iframe>
   </template>
+  <details class="music-playlist" hidden>
+    <summary>歌单</summary>
+    <ol class="music-tracks">
+      <li><button type="button" class="music-track" data-part="1" data-cid="42806936153" aria-pressed="false"><span>春庭雪 · 邓寓君（等什么君）</span><time datetime="PT4M1S">4:01</time></button></li>
+      <li><button type="button" class="music-track" data-part="2" data-cid="42809491662" aria-pressed="true"><span>半壶纱 · 刘珂矣</span><time datetime="PT3M42S">3:42</time></button></li>
+      <li><button type="button" class="music-track" data-part="3" data-cid="42807001129" aria-pressed="false"><span>赤伶 · HITA</span><time datetime="PT4M27S">4:27</time></button></li>
+      <li><button type="button" class="music-track" data-part="4" data-cid="42809492931" aria-pressed="false"><span>探故知 · 浅影阿、汐音社</span><time datetime="PT3M22S">3:22</time></button></li>
+      <li><button type="button" class="music-track" data-part="5" data-cid="42809622617" aria-pressed="false"><span>鸳鸯戏 · 邓寓君（等什么君）</span><time datetime="PT3M34S">3:34</time></button></li>
+      <li><button type="button" class="music-track" data-part="6" data-cid="42809494223" aria-pressed="false"><span>半生雪 · 七叔（叶泽浩）</span><time datetime="PT2M57S">2:57</time></button></li>
+      <li><button type="button" class="music-track" data-part="7" data-cid="42809495542" aria-pressed="false"><span>难却 · 平生不晚</span><time datetime="PT3M7S">3:07</time></button></li>
+      <li><button type="button" class="music-track" data-part="8" data-cid="42809230680" aria-pressed="false"><span>游山恋 · 海伦</span><time datetime="PT3M44S">3:44</time></button></li>
+    </ol>
+  </details>
 </div>

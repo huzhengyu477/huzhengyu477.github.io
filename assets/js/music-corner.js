@@ -1,21 +1,57 @@
-const musicToggle = document.querySelector(".music-toggle");
-const musicPlayer = document.getElementById("music-player");
-const musicTemplate = document.getElementById("music-player-template");
+const musicCorner = document.querySelector(".music-corner");
 
-if (musicToggle && musicPlayer && musicTemplate) {
-  musicToggle.hidden = false;
+if (musicCorner) {
+  const toggle = musicCorner.querySelector(".music-toggle");
+  const player = musicCorner.querySelector(".music-player");
+  const template = musicCorner.querySelector("template");
+  const playlist = musicCorner.querySelector(".music-playlist");
+  const tracks = playlist.querySelectorAll(".music-track");
+  const currentLine = musicCorner.querySelector(".music-current");
+  const source = musicCorner.querySelector(".music-source");
+  let currentTrack = playlist.querySelector('[aria-pressed="true"]');
 
-  musicToggle.addEventListener("click", () => {
-    const opening = musicPlayer.hidden;
+  function openPlayer() {
+    const frame = template.content.querySelector("iframe").cloneNode(true);
+    const url = new URL(frame.src);
+    url.searchParams.set("cid", currentTrack.dataset.cid);
+    frame.src = url;
+    player.replaceChildren(frame);
+    player.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "关闭播放器");
+  }
 
-    if (opening) {
-      musicPlayer.appendChild(musicTemplate.content.cloneNode(true));
+  function closePlayer() {
+    player.replaceChildren();
+    player.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "打开播放器");
+  }
+
+  toggle.addEventListener("click", () => {
+    if (player.hidden) {
+      openPlayer();
     } else {
-      musicPlayer.replaceChildren();
+      closePlayer();
     }
-
-    musicPlayer.hidden = !opening;
-    musicToggle.setAttribute("aria-expanded", String(opening));
-    musicToggle.setAttribute("aria-label", opening ? "关闭播放器" : "打开播放器");
   });
+
+  for (const track of tracks) {
+    track.addEventListener("click", () => {
+      if (track === currentTrack && !player.hidden) return;
+
+      currentTrack.setAttribute("aria-pressed", "false");
+      currentTrack = track;
+      currentTrack.setAttribute("aria-pressed", "true");
+      currentLine.textContent = currentTrack.querySelector("span").textContent;
+
+      const url = new URL(source.href);
+      url.searchParams.set("p", currentTrack.dataset.part);
+      source.href = url;
+      openPlayer();
+    });
+  }
+
+  toggle.hidden = false;
+  playlist.hidden = false;
 }

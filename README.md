@@ -145,27 +145,39 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 ## Music Corner {#music-corner}
 
-{% assign music_tracks = site.data.music_tracks %}
-{% assign featured_track = music_tracks[1] %}
+{% for collection in site.data.music_collections %}
+{% assign music_tracks = site.data.music_tracks[collection.id] %}
+{% assign featured_index = collection.featured_part | minus: 1 %}
+{% assign featured_track = music_tracks[featured_index] %}
 
-<div class="music-corner" lang="zh-CN">
+<div class="music-corner" lang="zh-CN" data-cid="{{ featured_track.cid }}">
   <div class="music-main">
     <div class="music-bar">
       <span class="music-disc" aria-hidden="true"></span>
       <div class="music-copy">
-        <h3>古风与戏曲</h3>
-        <p class="music-current" aria-live="polite">{{ featured_track.title | escape }} · {{ featured_track.artist | escape }}</p>
-        <a class="music-source" href="https://www.bilibili.com/video/BV1wWJa61EYv/?p={{ featured_track.part }}" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
+        <h3>{{ collection.title | escape }}</h3>
+        <p class="music-current" aria-live="polite">
+          {{ featured_track.title | escape }} ·
+          {% if featured_track.artist %}
+            {{ featured_track.artist | escape }}
+          {% else %}
+            {% assign featured_minutes = featured_track.duration | divided_by: 60 %}
+            {% assign featured_seconds = featured_track.duration | modulo: 60 %}
+            <time datetime="PT{{ featured_minutes }}M{{ featured_seconds }}S">{{ featured_minutes }}:{% if featured_seconds < 10 %}0{% endif %}{{ featured_seconds }}</time>
+          {% endif %}
+        </p>
+        <a class="music-source" href="https://www.bilibili.com/video/{{ collection.bvid }}/?p={{ featured_track.part }}" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
       </div>
-      <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player" aria-expanded="false" hidden>
+      <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player-{{ collection.id }}" aria-expanded="false" hidden>
         <span class="music-toggle-icon" aria-hidden="true"></span>
       </button>
     </div>
-    <div class="music-player" id="music-player" hidden></div>
+    <div class="music-player" id="music-player-{{ collection.id }}" hidden></div>
   </div>
-  <template id="music-player-template">
-    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid=BV1wWJa61EYv&amp;autoplay=1&amp;danmaku=0" allow="autoplay" allowfullscreen></iframe>
+  <template>
+    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid={{ collection.bvid }}&amp;autoplay=1&amp;danmaku=0" allow="autoplay" allowfullscreen></iframe>
   </template>
+  {% if music_tracks.size > 1 %}
   <details class="music-playlist" hidden>
     <summary>歌单 · {{ music_tracks.size }} 首</summary>
     <ol class="music-tracks">
@@ -181,4 +193,6 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
       {% endfor %}
     </ol>
   </details>
+  {% endif %}
 </div>
+{% endfor %}

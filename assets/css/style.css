@@ -640,6 +640,8 @@ html[data-theme="fresh"] .venue-main { background: #ecfdf5; color: #065f46; }
   background: linear-gradient(110deg, #f1f3eb, #fbf9f1 65%);
 }
 
+.music-corner + .music-corner { margin-top: 12px; }
+
 #music-corner { scroll-margin-top: 20px; }
 
 .music-main {

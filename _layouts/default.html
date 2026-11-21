@@ -8,7 +8,9 @@
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <script src="{{ "/assets/js/publications.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    {% comment %}
     <script src="{{ "/assets/js/music-corner.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    {% endcomment %}
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -54,11 +56,13 @@
             </a>
           {% endif %}
         </nav>
+        {% comment %}
         <a class="music-shortcut" href="#music-corner">
           <span aria-hidden="true">♫</span>
           <span>Music Corner</span>
           <span class="music-shortcut-arrow" aria-hidden="true">↓</span>
         </a>
+        {% endcomment %}
       </header>
 
       <section>

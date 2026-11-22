@@ -156,16 +156,9 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
       <span class="music-disc" aria-hidden="true"></span>
       <div class="music-copy">
         <h3>{{ collection.title | escape }}</h3>
-        <p class="music-current" aria-live="polite">
-          {{ featured_track.title | escape }} ·
-          {% if featured_track.artist %}
-            {{ featured_track.artist | escape }}
-          {% else %}
-            {% assign featured_minutes = featured_track.duration | divided_by: 60 %}
-            {% assign featured_seconds = featured_track.duration | modulo: 60 %}
-            <time datetime="PT{{ featured_minutes }}M{{ featured_seconds }}S">{{ featured_minutes }}:{% if featured_seconds < 10 %}0{% endif %}{{ featured_seconds }}</time>
-          {% endif %}
-        </p>
+        {% if music_tracks.size > 1 %}
+        <p class="music-current" aria-live="polite">{{ featured_track.title | escape }} · {{ featured_track.artist | escape }}</p>
+        {% endif %}
         <a class="music-source" href="https://www.bilibili.com/video/{{ collection.bvid }}/?p={{ featured_track.part }}" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
       </div>
       <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player-{{ collection.id }}" aria-expanded="false" hidden>

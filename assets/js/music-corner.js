@@ -15,6 +15,7 @@ for (const musicCorner of document.querySelectorAll(".music-corner")) {
 
     const frame = template.content.querySelector("iframe").cloneNode(true);
     const url = new URL(frame.src);
+    if (currentTrack) url.searchParams.set("bvid", currentTrack.dataset.bvid);
     url.searchParams.set("cid", currentTrack?.dataset.cid ?? musicCorner.dataset.cid);
     frame.src = url;
     player.replaceChildren(frame);
@@ -50,6 +51,7 @@ for (const musicCorner of document.querySelectorAll(".music-corner")) {
       currentLine.textContent = currentTrack.querySelector("span").textContent;
 
       const url = new URL(source.href);
+      url.pathname = `/video/${currentTrack.dataset.bvid}/`;
       url.searchParams.set("p", currentTrack.dataset.part);
       source.href = url;
       openPlayer();

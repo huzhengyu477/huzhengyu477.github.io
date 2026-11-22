@@ -147,19 +147,24 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
 
 {% for collection in site.data.music_collections %}
 {% assign music_tracks = site.data.music_tracks[collection.id] %}
-{% assign featured_index = collection.featured_part | minus: 1 %}
+{% assign featured_index = collection.featured_part | default: 1 | minus: 1 %}
 {% assign featured_track = music_tracks[featured_index] %}
+{% assign featured_bvid = featured_track.bvid | default: collection.bvid %}
 
 <div class="music-corner" lang="zh-CN" data-cid="{{ featured_track.cid }}">
   <div class="music-main">
     <div class="music-bar">
       <span class="music-disc" aria-hidden="true"></span>
       <div class="music-copy">
+        {% if collection.title %}
         <h3>{{ collection.title | escape }}</h3>
         {% if music_tracks.size > 1 %}
         <p class="music-current" aria-live="polite">{{ featured_track.title | escape }} · {{ featured_track.artist | escape }}</p>
         {% endif %}
-        <a class="music-source" href="https://www.bilibili.com/video/{{ collection.bvid }}/?p={{ featured_track.part }}" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
+        {% else %}
+        <h3 class="music-current" aria-live="polite">{{ featured_track.title | escape }}</h3>
+        {% endif %}
+        <a class="music-source" href="https://www.bilibili.com/video/{{ featured_bvid }}/?p={{ featured_track.part }}" target="_blank" rel="noopener noreferrer">B 站原页 <span aria-hidden="true">↗</span></a>
       </div>
       <button class="music-toggle" type="button" aria-label="打开播放器" aria-controls="music-player-{{ collection.id }}" aria-expanded="false" hidden>
         <span class="music-toggle-icon" aria-hidden="true"></span>
@@ -168,18 +173,18 @@ I am a Ph.D. student at the **University of Washington, Seattle**, advised by Pr
     <div class="music-player" id="music-player-{{ collection.id }}" hidden></div>
   </div>
   <template>
-    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid={{ collection.bvid }}&amp;autoplay=1&amp;danmaku=0" allow="autoplay" allowfullscreen></iframe>
+    <iframe title="B 站音乐播放器" src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid={{ featured_bvid }}&amp;autoplay=1&amp;danmaku=0" allow="autoplay" allowfullscreen></iframe>
   </template>
   {% if music_tracks.size > 1 %}
-  <details class="music-playlist" hidden>
+  <details class="music-playlist" hidden{% unless collection.title %} open{% endunless %}>
     <summary>歌单 · {{ music_tracks.size }} 首</summary>
     <ol class="music-tracks">
       {% for track in music_tracks %}
       {% assign minutes = track.duration | divided_by: 60 %}
       {% assign seconds = track.duration | modulo: 60 %}
       <li>
-        <button type="button" class="music-track" data-part="{{ track.part }}" data-cid="{{ track.cid }}" aria-pressed="{% if track.part == featured_track.part %}true{% else %}false{% endif %}">
-          <span>{{ track.title | escape }} · {{ track.artist | escape }}</span>
+        <button type="button" class="music-track" data-part="{{ track.part }}" data-bvid="{{ track.bvid | default: collection.bvid }}" data-cid="{{ track.cid }}" aria-pressed="{% if track.cid == featured_track.cid %}true{% else %}false{% endif %}">
+          <span>{{ track.title | escape }}{% if collection.title %} · {{ track.artist | escape }}{% endif %}</span>
           <time datetime="PT{{ minutes }}M{{ seconds }}S">{{ minutes }}:{% if seconds < 10 %}0{% endif %}{{ seconds }}</time>
         </button>
       </li>
